@@ -1,10 +1,10 @@
 import { Box, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { Container, styled } from '@mui/system';
+import { Suspense } from 'react';
 import './App.css';
 import Hero from './components/hero';
-import Navbar from './components/navbar';
-import { Suspense } from 'react';
 import Loading from './components/loading';
+import Navbar from './components/navbar';
 import Technologies from './components/technologies';
 
 const theme = createTheme({

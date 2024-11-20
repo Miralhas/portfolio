@@ -1,12 +1,30 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import Backend from "i18next-http-backend";
 
 i18next
     .use(initReactI18next)
     .use(LanguageDetector)
-    .use(Backend)
     .init({
         fallbackLng: "en",
+        resources: {
+            en: {
+                translation: {
+                    headingSubtitle: "Full-Stack Web Developer",
+                    language: "Language",
+                    loading: "Loading...",
+                    knownTechnologies: "Known Technologies",
+                    resume: "Resume"
+                }
+            },
+            br: {
+                translation: {
+                    headingSubtitle: "Desenvolvedor Web Full-Stack",
+                    language: "Linguagem",
+                    loading: "Carregando...",
+                    knownTechnologies: "Tecnologias Conhecidas",
+                    resume: "Curriculo"
+                }
+            }
+        }
     })
