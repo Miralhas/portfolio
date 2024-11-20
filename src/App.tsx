@@ -1,11 +1,12 @@
 import { Box, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { Container, styled } from '@mui/system';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import './App.css';
 import Hero from './components/hero';
 import Loading from './components/loading';
 import Navbar from './components/navbar';
 import Technologies from './components/technologies';
+import Projects from './components/projects';
 
 const theme = createTheme({
   colorSchemes: {
@@ -31,20 +32,23 @@ const StyledBackgroundBox = styled(Box)(({ theme }) => {
       backgroundImage:
         'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)',
     }),
-    display: "flex"
+    display: "flex",
   }
 })
 
 function App() {
+  const [language, setLanguage] = useState<"en" | "br">("en");
+
   return (
     <ThemeProvider theme={theme} defaultMode='dark'>
       <CssBaseline enableColorScheme />
       <StyledBackgroundBox>
         <Suspense fallback={<Loading />}>
           <Container fixed sx={{ padding: "1em" }}>
-            <Navbar />
+            <Navbar language={language} setLanguage={setLanguage} />
             <Hero />
             <Technologies />
+            <Projects language={language}/>
           </Container>
         </Suspense>
       </StyledBackgroundBox>

@@ -14,7 +14,8 @@ i18next
                     language: "Language",
                     loading: "Loading...",
                     knownTechnologies: "Known Technologies",
-                    resume: "Resume"
+                    resume: "Resume",
+                    projects: "Projects"
                 }
             },
             br: {
@@ -23,7 +24,8 @@ i18next
                     language: "Linguagem",
                     loading: "Carregando...",
                     knownTechnologies: "Tecnologias Conhecidas",
-                    resume: "Curriculo"
+                    resume: "Curriculo",
+                    projects: "Projetos"
                 }
             }
         }

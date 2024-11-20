@@ -1,6 +1,6 @@
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { Box, FormControl, IconButton, InputLabel, MenuItem, Select, styled, Typography, useColorScheme } from "@mui/material";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const LogoBox = styled(Box)({
@@ -11,8 +11,12 @@ const LogoBox = styled(Box)({
     }
 });
 
-const Navbar = () => {
-    const [language, setLanguage] = useState<"en" | "br">("en");
+type NavbarProps = {
+    language: "en" | "br",
+    setLanguage: Dispatch<SetStateAction<"en" | "br">>
+}
+
+const Navbar = ({ language, setLanguage }: NavbarProps) => {
     const { mode, setMode } = useColorScheme();
     const { t, i18n } = useTranslation();
 
