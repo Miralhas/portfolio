@@ -1,1 +1,1 @@
-![portfolio](https://github.com/user-attachments/assets/55bd839c-5fbc-4ae3-8266-a7ee573b7b7d)
+![portfolio-ezgif com-optimize](https://github.com/user-attachments/assets/d581a19a-1d60-4c5b-b454-51972328f40f)
