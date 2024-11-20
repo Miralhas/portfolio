@@ -37,7 +37,7 @@ const cloudProps: Omit<ICloud, "children"> = {
         maxSpeed: 0.02,
         minSpeed: 0.02,
         dragControl: false,
-        textAlign: "centre"
+        textAlign: "centre",
     },
 };
 

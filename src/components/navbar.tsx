@@ -12,7 +12,7 @@ const LogoBox = styled(Box)({
 });
 
 const Navbar = () => {
-    const [language, setLanguage] = useState<"en" | "br">("br");
+    const [language, setLanguage] = useState<"en" | "br">("en");
     const { mode, setMode } = useColorScheme();
     const { t, i18n } = useTranslation();
 

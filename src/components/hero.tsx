@@ -1,13 +1,14 @@
-import { Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import Typewriter from 'typewriter-effect';
+import Socials from "./socials";
 
 const Hero = () => {
     const { t } = useTranslation();
     return (
         <>
-            <Stack spacing={1} direction="column" useFlexGap sx={{
-                minHeight: { xs: "40vh", sm: "100vh" }
+            <Stack direction="column" useFlexGap spacing={2}  sx={{
+                minHeight: { xs: "40vh", sm: "100vh" },
             }} alignItems="center" justifyContent="center">
                 <Typography
                     variant="h1"
@@ -48,6 +49,23 @@ const Hero = () => {
                 }}>
                     {t("headingSubtitle")}
                 </Typography>
+                <Stack direction="column" useFlexGap spacing={1}>
+                    <Button variant="contained" sx={(theme) => ({
+                        width: "100%",
+                        ...theme.applyStyles("dark", {
+                            background: theme.palette.primary.dark
+                        }),
+                        transition: "all 250ms",
+                        "&:hover": {
+                            transform: "scale(1.1)",
+                            background: "transparent",
+                            color: theme.palette.text.primary,
+                            border: "1px solid",
+                            borderColor: theme.palette.primary.dark
+                        }
+                    })} LinkComponent="a" href="/assets/Victor_Miralhas_Curriculo_CV.pdf" download="Victor_Miralhas_CV">{t("resume")}</Button>
+                    <Socials />
+                </Stack>
             </Stack>
         </>
     )
