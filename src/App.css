@@ -29,3 +29,9 @@ video {
     display: block;
     max-width: 100%;
 }
+
+.tooltipXd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

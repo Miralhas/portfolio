@@ -5,6 +5,7 @@ import Hero from './components/hero';
 import Navbar from './components/navbar';
 import { Suspense } from 'react';
 import Loading from './components/loading';
+import Technologies from './components/technologies';
 
 const theme = createTheme({
   colorSchemes: {
@@ -40,9 +41,10 @@ function App() {
       <CssBaseline enableColorScheme />
       <StyledBackgroundBox>
         <Suspense fallback={<Loading />}>
-          <Container fixed>
+          <Container fixed sx={{ padding: "1em" }}>
             <Navbar />
             <Hero />
+            <Technologies />
           </Container>
         </Suspense>
       </StyledBackgroundBox>

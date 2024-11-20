@@ -24,7 +24,7 @@ const Navbar = () => {
         setMode(mode === "light" ? "dark" : "light");
     }
     return (
-        <Box position="sticky" top={0} display="flex" alignItems="center" mb="12em" mt="1em" sx={{
+        <Box position="sticky" top={15} display="flex" alignItems="center" sx={{
             justifyContent: { xs: "center", sm: "space-between" }
         }}>
             <LogoBox>

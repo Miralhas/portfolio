@@ -6,7 +6,9 @@ const Hero = () => {
     const { t } = useTranslation();
     return (
         <>
-            <Stack spacing={2} direction="column" useFlexGap >
+            <Stack spacing={1} direction="column" useFlexGap sx={{
+                minHeight: { xs: "40vh", sm: "100vh" }
+            }} alignItems="center" justifyContent="center">
                 <Typography
                     variant="h1"
                     sx={{
@@ -40,14 +42,10 @@ const Hero = () => {
                     </Typography>
                 </Typography>
 
-                <Typography variant="subtitle2" textAlign="center" sx={(theme) => ({
-                    background: "linear-gradient(45deg, #212121, #09182e)",
-                    backgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    ...theme.applyStyles("dark", {
-                        background: "linear-gradient(45deg, #FFF, #09182e)",
-                    })
-                })}>
+                <Typography variant="subtitle2" textAlign="center" sx={{
+                    fontWeight: 700,
+                    color: "text.secondary"
+                }}>
                     {t("headingSubtitle")}
                 </Typography>
             </Stack>

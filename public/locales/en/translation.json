@@ -1,4 +1,6 @@
 {
     "headingSubtitle": "Full-Stack Web Developer",
-    "language": "Language"
+    "language": "Language",
+    "loading": "Loading...",
+    "knownTechnologies": "Known Technologies"
 }
