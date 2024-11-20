@@ -1,6 +1,6 @@
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { Box, FormControl, IconButton, InputLabel, MenuItem, Select, styled, Typography, useColorScheme } from "@mui/material";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 const LogoBox = styled(Box)({
