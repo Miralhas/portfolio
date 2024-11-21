@@ -29,9 +29,10 @@ const Navbar = ({ language, setLanguage }: NavbarProps) => {
         setMode(mode === "light" ? "dark" : "light");
     }
     return (
-        <Container sx={{ position: "sticky", top: "15px" }} maxWidth="xl">
+        <Container sx={{ position: "sticky", top: "0px", backdropFilter: "blur(5px)" }} maxWidth="xl">
             <Box display="flex" alignItems="center" sx={{
                 justifyContent: { xs: "center", sm: "space-between" },
+                py: ".25em"
             }}>
                 <LogoBox>
                     <Typography variant="h6" fontWeight={500}>

@@ -63,7 +63,7 @@ const Hero = () => {
                             border: "1px solid",
                             borderColor: theme.palette.primary.dark
                         }
-                    })} LinkComponent="a" href={import.meta.env.BASE_URL+"assets/Victor_Miralhas_Curriculo_CV.pdf"} download="Victor_Miralhas_CV">{t("resume")}</Button>
+                    })} LinkComponent="a" target="_blank" href={import.meta.env.BASE_URL+"assets/cv.pdf"}>{t("resume")}</Button>
                     <Socials />
                 </Stack>
             </Stack>

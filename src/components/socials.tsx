@@ -14,21 +14,21 @@ const Socials = () => {
     return (
         <Box>
             <Tooltip title="Github">
-                <IconButton LinkComponent="a" href="https://github.com/miralhas">
+                <IconButton LinkComponent="a" href="https://github.com/miralhas" target="_blank">
                     <IconWrapper>
                         <GitHub fontSize="inherit" />
                     </IconWrapper>
                 </IconButton>
             </Tooltip>
             <Tooltip title="Linkedin">
-                <IconButton LinkComponent="a" href="https://www.linkedin.com/in/victor-miralhas">
+                <IconButton LinkComponent="a" href="https://www.linkedin.com/in/victor-miralhas" target="_blank">
                     <IconWrapper>
                         <LinkedIn fontSize="inherit" />
                     </IconWrapper>
                 </IconButton>
             </Tooltip>
             <Tooltip title="Mail">
-                <IconButton LinkComponent="a" href="mailto:victorsouza.miralhas@gmail.com">
+                <IconButton LinkComponent="a" href="mailto:victorsouza.miralhas@gmail.com" target="_blank">
                     <IconWrapper>
                         <Mail fontSize="inherit" />
                     </IconWrapper>
