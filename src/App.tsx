@@ -33,8 +33,8 @@ function App() {
       <CssBaseline enableColorScheme />
       <StyledBackgroundBox>
         <Suspense fallback={<Loading />}>
+          <Navbar language={language} setLanguage={setLanguage} />
           <Container fixed sx={{ padding: "1em" }}>
-            <Navbar language={language} setLanguage={setLanguage} />
             <Hero />
             <Technologies />
             <ProjectsGrid language={language} />

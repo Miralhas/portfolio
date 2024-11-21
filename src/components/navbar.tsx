@@ -1,5 +1,5 @@
 import { DarkMode, LightMode } from "@mui/icons-material";
-import { Box, FormControl, IconButton, InputLabel, MenuItem, Select, styled, Typography, useColorScheme } from "@mui/material";
+import { Box, Container, FormControl, IconButton, InputLabel, MenuItem, Select, styled, Typography, useColorScheme } from "@mui/material";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { AcceptedLanguages } from "../types/accepted-languages";
@@ -29,43 +29,45 @@ const Navbar = ({ language, setLanguage }: NavbarProps) => {
         setMode(mode === "light" ? "dark" : "light");
     }
     return (
-        <Box position="sticky" top={15} display="flex" alignItems="center" sx={{
-            justifyContent: { xs: "center", sm: "space-between" },
-        }}>
-            <LogoBox>
-                <Typography variant="h6" fontWeight={500}>
-                    V
-                    <Typography display={"inline"} variant="h6" component="span" sx={(theme) => ({
-                        color: "primary.main",
-                        ...theme.applyStyles("dark", {
-                            color: "primary.dark"
-                        })
-                    })}>
-                        M
-                    </Typography>
-                </Typography>
-            </LogoBox>
-            <IconButton aria-label="toggle dark mode" onClick={toggleMode} size="small" sx={{
-                margin: { xs: "0 auto", md: "0 1em 0 auto" },
-                left: { xs: "20px", md: "0px" }
+        <Container sx={{ position: "sticky", top: "15px" }} maxWidth="xl">
+            <Box display="flex" alignItems="center" sx={{
+                justifyContent: { xs: "center", sm: "space-between" },
             }}>
-                {mode === "dark" ? <LightMode /> : <DarkMode />}
-            </IconButton>
-            <FormControl sx={{ minWidth: "80px" }} size="small" variant="standard">
-                <InputLabel sx={{ fontSize: ".9rem" }} id="demo-simple-select-standard-label">{t("language")}</InputLabel>
-                <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={language}
-                    label="Language"
-                    onChange={e => setLanguage(e.target.value as AcceptedLanguages)}
-                    sx={{ fontSize: ".75rem" }}
-                >
-                    <MenuItem value="en" sx={{ fontSize: ".75rem" }}>EN</MenuItem>
-                    <MenuItem value="br" sx={{ fontSize: ".75rem" }}>BR</MenuItem>
-                </Select>
-            </FormControl>
-        </Box>
+                <LogoBox>
+                    <Typography variant="h6" fontWeight={500}>
+                        V
+                        <Typography display={"inline"} variant="h6" component="span" sx={(theme) => ({
+                            color: "primary.main",
+                            ...theme.applyStyles("dark", {
+                                color: "primary.dark"
+                            })
+                        })}>
+                            M
+                        </Typography>
+                    </Typography>
+                </LogoBox>
+                <IconButton aria-label="toggle dark mode" onClick={toggleMode} size="small" sx={{
+                    margin: { xs: "0 auto", md: "0 1em 0 auto" },
+                    left: { xs: "20px", md: "0px" }
+                }}>
+                    {mode === "dark" ? <LightMode /> : <DarkMode />}
+                </IconButton>
+                <FormControl sx={{ minWidth: "80px" }} size="small" variant="standard">
+                    <InputLabel sx={{ fontSize: ".9rem" }} id="demo-simple-select-standard-label">{t("language")}</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={language}
+                        label="Language"
+                        onChange={e => setLanguage(e.target.value as AcceptedLanguages)}
+                        sx={{ fontSize: ".75rem" }}
+                    >
+                        <MenuItem value="en" sx={{ fontSize: ".75rem" }}>EN</MenuItem>
+                        <MenuItem value="br" sx={{ fontSize: ".75rem" }}>BR</MenuItem>
+                    </Select>
+                </FormControl>
+            </Box>
+        </Container>
     )
 }
 
