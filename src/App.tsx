@@ -1,25 +1,15 @@
-import { Box, createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import { Box, CssBaseline, ThemeProvider } from '@mui/material';
 import { Container, styled } from '@mui/system';
 import { Suspense, useState } from 'react';
 import './App.css';
 import Hero from './components/hero';
 import Loading from './components/loading';
 import Navbar from './components/navbar';
+import ProjectsGrid from './components/projects';
 import Technologies from './components/technologies';
-import Projects from './components/projects';
+import { AcceptedLanguages } from './types/accepted-languages';
+import { theme } from './lib/theme';
 
-const theme = createTheme({
-  colorSchemes: {
-    light: true,
-    dark: {
-      palette: {
-        background: {
-          default: "#05070a"
-        }
-      }
-    }
-  }
-})
 
 const StyledBackgroundBox = styled(Box)(({ theme }) => {
   console.log(theme)
@@ -32,12 +22,11 @@ const StyledBackgroundBox = styled(Box)(({ theme }) => {
       backgroundImage:
         'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)',
     }),
-    display: "flex",
   }
 })
 
 function App() {
-  const [language, setLanguage] = useState<"en" | "br">("en");
+  const [language, setLanguage] = useState<AcceptedLanguages>("en");
 
   return (
     <ThemeProvider theme={theme} defaultMode='dark'>
@@ -48,7 +37,7 @@ function App() {
             <Navbar language={language} setLanguage={setLanguage} />
             <Hero />
             <Technologies />
-            <Projects language={language}/>
+            <ProjectsGrid language={language} />
           </Container>
         </Suspense>
       </StyledBackgroundBox>

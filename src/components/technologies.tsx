@@ -28,21 +28,26 @@ const slugs = [
     "css3",
     "nodedotjs",
     "nextdotjs",
-    "amazonaws",
+    "amazonwebservices",
     "nginx",
     "vercel",
     "docker",
     "git",
     "github",
-    "springboot"
+    "springboot",
+    "mysql",
 ];
 
 const Technologies = () => {
     const { t } = useTranslation()
     return (
-        <Box>
+        <Box
+            sx={{
+                minHeight: { xs: "50vh", sm: "100vh" },
+            }}
+        >
             <Typography component="h2" textAlign="center" sx={(theme) => ({
-                fontSize: {xs: theme.typography.h5.fontSize , md: theme.typography.h4.fontSize},
+                fontSize: { xs: theme.typography.h5.fontSize, md: theme.typography.h4.fontSize },
                 fontWeight: 500,
                 background: `linear-gradient(90deg, ${theme.palette.primary.light}, ${theme.palette.primary.dark})`,
                 backgroundClip: "text",

@@ -2,6 +2,7 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 import { Box, FormControl, IconButton, InputLabel, MenuItem, Select, styled, Typography, useColorScheme } from "@mui/material";
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { AcceptedLanguages } from "../types/accepted-languages";
 
 const LogoBox = styled(Box)({
     transition: "all 500ms ease-in-out",
@@ -12,8 +13,8 @@ const LogoBox = styled(Box)({
 });
 
 type NavbarProps = {
-    language: "en" | "br",
-    setLanguage: Dispatch<SetStateAction<"en" | "br">>
+    language: AcceptedLanguages,
+    setLanguage: Dispatch<SetStateAction<AcceptedLanguages>>
 }
 
 const Navbar = ({ language, setLanguage }: NavbarProps) => {
@@ -29,7 +30,7 @@ const Navbar = ({ language, setLanguage }: NavbarProps) => {
     }
     return (
         <Box position="sticky" top={15} display="flex" alignItems="center" sx={{
-            justifyContent: { xs: "center", sm: "space-between" }
+            justifyContent: { xs: "center", sm: "space-between" },
         }}>
             <LogoBox>
                 <Typography variant="h6" fontWeight={500}>
@@ -44,7 +45,6 @@ const Navbar = ({ language, setLanguage }: NavbarProps) => {
                     </Typography>
                 </Typography>
             </LogoBox>
-            {/* <Box display="flex" gap={2}> */}
             <IconButton aria-label="toggle dark mode" onClick={toggleMode} size="small" sx={{
                 margin: { xs: "0 auto", md: "0 1em 0 auto" },
                 left: { xs: "20px", md: "0px" }
@@ -58,14 +58,13 @@ const Navbar = ({ language, setLanguage }: NavbarProps) => {
                     id="demo-simple-select"
                     value={language}
                     label="Language"
-                    onChange={e => setLanguage(e.target.value as "br" | "en")}
+                    onChange={e => setLanguage(e.target.value as AcceptedLanguages)}
                     sx={{ fontSize: ".75rem" }}
                 >
                     <MenuItem value="en" sx={{ fontSize: ".75rem" }}>EN</MenuItem>
                     <MenuItem value="br" sx={{ fontSize: ".75rem" }}>BR</MenuItem>
                 </Select>
             </FormControl>
-            {/* </Box> */}
         </Box>
     )
 }

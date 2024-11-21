@@ -8,7 +8,7 @@ const Hero = () => {
     return (
         <>
             <Stack direction="column" useFlexGap spacing={2}  sx={{
-                minHeight: { xs: "40vh", sm: "100vh" },
+                minHeight: { xs: "70vh", sm: "100vh" },
             }} alignItems="center" justifyContent="center">
                 <Typography
                     variant="h1"
