@@ -4,7 +4,6 @@ import IconCloud from "./icon-cloud";
 
 const StyledBox = styled(Box)(({ theme }) => ({
     width: "100%",
-    marginTop: "1em",
     borderRadius: theme.shape.borderRadius,
     outline: "6px solid",
     outlineColor: "hsla(220, 25%, 80%, 0.2)",
@@ -54,7 +53,8 @@ const Technologies = () => {
                 color: "transparent",
                 ...theme.applyStyles("dark", {
                     background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
-                })
+                }),
+                mb: "1em"
             })}>
                 {t("knownTechnologies")}
             </Typography>

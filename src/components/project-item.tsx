@@ -1,10 +1,11 @@
 import { GitHub } from "@mui/icons-material";
-import { Box, Button, Card, CardContent, CardMedia, Grid2, Paper, Stack, styled, Typography, useColorScheme } from "@mui/material";
+import { Box, Button, Card, CardContent, CardMedia, Grid2, Paper, Stack, styled, Tooltip, Typography, useColorScheme } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
 import { fetchSimpleIcons } from "react-icon-cloud";
 import { Project } from "../types/project";
-import { renderCustomIcon } from "../utils/utils";
+import { renderCustomIcon, truncateText } from "../utils/utils";
 import { IconData } from "./icon-cloud";
+import { useTranslation } from "react-i18next";
 
 type ProjectProps = {
     project: Project;
@@ -12,7 +13,6 @@ type ProjectProps = {
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
     width: "100%",
-    marginTop: "1em",
     borderRadius: theme.shape.borderRadius,
     outline: "6px solid",
     outlineColor: "hsla(220, 25%, 80%, 0.1)",
@@ -26,9 +26,14 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
     }),
 }));
 
+const tooltipText = (text: string) => {
+    return text.length === truncateText(text, 25).length ? "" : text;
+}
+
 const ProjectItem = ({ project }: ProjectProps) => {
     const [data, setData] = useState<IconData | null>(null);
     const { mode } = useColorScheme();
+    const { t } = useTranslation();
 
     useEffect(() => {
         fetchSimpleIcons({ slugs: project.technologySlugs }).then(setData);
@@ -47,16 +52,20 @@ const ProjectItem = ({ project }: ProjectProps) => {
             <StyledPaper elevation={0} variant="elevation">
                 <Card>
                     <CardMedia component="img" image={project.imageSrc} height={250} />
-                    <CardContent sx={{paddingBottom: ".75em !important"}}>
-                        <Typography gutterBottom variant="h5" component="div">
-                            {project.title}
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                            {project.description}
-                        </Typography>
+                    <CardContent sx={{ paddingBottom: ".75em !important" }}>
+                        <Box sx={{ minHeight: "81px" }}>
+                            <Typography gutterBottom variant="h5" component="div">
+                                {project.title}
+                            </Typography>
+                            <Tooltip title={tooltipText(t(project.description))} placement="top-end" arrow enterDelay={700} leaveDelay={200}>
+                                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                                    {truncateText(t(project.description), 25)}
+                                </Typography>
+                            </Tooltip>
+                        </Box>
                         <Stack direction="row" useFlexGap spacing={3} mt={3}>
                             {renderedIcons?.map(icon => (
-                                <Box sx={{
+                                <Box key={icon.key} sx={{
                                     transition: "all 250ms",
                                     "&:hover": {
                                         transform: "scale(1.5)",
@@ -67,15 +76,22 @@ const ProjectItem = ({ project }: ProjectProps) => {
                                 </Box>
                             ))}
                         </Stack>
-                        <Button variant="text" color="inherit" startIcon={<GitHub />} LinkComponent="a" href={project.githubHref} sx={{
-                            alignItems: "flex-start",
-                            mt: "1.5em",
-                            transition: "all 450ms",
-                            "&:hover": {
-                                transform: "scale(1.05)",
-                                px: "1em"
-                            }
-                        }}>
+                        <Button
+                            variant="text"
+                            color="inherit"
+                            startIcon={<GitHub />}
+                            LinkComponent="a"
+                            href={project.githubHref}
+                            target="_blank"
+                            sx={{
+                                alignItems: "flex-start",
+                                marginTop: "1.5em",
+                                transition: "all 450ms",
+                                "&:hover": {
+                                    transform: "scale(1.05)",
+                                    px: "1em"
+                                }
+                            }}>
                             Github
                         </Button>
                     </CardContent>

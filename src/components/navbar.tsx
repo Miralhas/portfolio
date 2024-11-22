@@ -30,9 +30,9 @@ const Navbar = ({ language, setLanguage }: NavbarProps) => {
     }
     return (
         <Container sx={{ position: "sticky", top: "0px", backdropFilter: "blur(5px)" }} maxWidth="xl">
-            <Box display="flex" alignItems="center" sx={{
+            <Box display="flex" alignItems="flex-end" sx={{
                 justifyContent: { xs: "center", sm: "space-between" },
-                py: ".25em"
+                py: ".5em"
             }}>
                 <LogoBox>
                     <Typography variant="h6" fontWeight={500}>
