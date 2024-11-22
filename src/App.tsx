@@ -37,7 +37,7 @@ function App() {
           <Container fixed sx={{ padding: "1em" }}>
             <Hero />
             <Technologies />
-            <ProjectsGrid language={language} />
+            <ProjectsGrid />
           </Container>
         </Suspense>
       </StyledBackgroundBox>

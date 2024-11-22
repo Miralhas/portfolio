@@ -28,7 +28,7 @@ const projects: Project[] = [
         description: "artGallery",
         technologySlugs: ["python", "django", "sqlite", "javascript", "html5", "css3"],
         imageSrc: import.meta.env.BASE_URL + "/images/projects/art-gallery.png",
-        githubHref: "https://github.com/Miralhas/e-commerce-uol",
+        githubHref: "https://github.com/Miralhas/art-gallery",
     },
     {
         id: 4,
@@ -36,7 +36,7 @@ const projects: Project[] = [
         description: "portfolio",
         technologySlugs: ["react", "typescript", "githubpages", "mui", "html5"],
         imageSrc: import.meta.env.BASE_URL + "/images/projects/portfolio.png",
-        githubHref: "https://github.com/Miralhas/e-commerce-uol",
+        githubHref: "https://github.com/Miralhas/portfolio",
     },
 ] as const;
 
