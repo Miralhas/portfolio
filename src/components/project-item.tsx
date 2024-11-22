@@ -1,11 +1,9 @@
 import { GitHub } from "@mui/icons-material";
-import { Box, Button, Card, CardContent, CardMedia, Grid2, Paper, Stack, styled, Tooltip, Typography, useColorScheme } from "@mui/material";
-import { useEffect, useMemo, useState } from "react";
-import { fetchSimpleIcons } from "react-icon-cloud";
-import { Project } from "../types/project";
-import { renderCustomIcon, truncateText } from "../utils/utils";
-import { IconData } from "./icon-cloud";
+import { Box, Button, Card, CardContent, CardMedia, Grid2, Paper, Stack, styled, Tooltip, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { useSimpleIcons } from "../hooks/useSimpleIcons";
+import { Project } from "../types/project";
+import { truncateText } from "../utils/utils";
 
 type ProjectProps = {
     project: Project;
@@ -31,21 +29,8 @@ const tooltipText = (text: string) => {
 }
 
 const ProjectItem = ({ project }: ProjectProps) => {
-    const [data, setData] = useState<IconData | null>(null);
-    const { mode } = useColorScheme();
     const { t } = useTranslation();
-
-    useEffect(() => {
-        fetchSimpleIcons({ slugs: project.technologySlugs }).then(setData);
-    }, [project.technologySlugs]);
-
-    const renderedIcons = useMemo(() => {
-        if (!data) return null;
-
-        return Object.values(data.simpleIcons).map((icon) =>
-            renderCustomIcon(icon, mode || "light", 30),
-        );
-    }, [data, mode]);
+    const renderedIcons = useSimpleIcons(project.technologySlugs);
 
     return (
         <Grid2 size={{ xs: 12, md: 6 }}>
