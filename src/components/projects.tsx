@@ -60,7 +60,7 @@ const ProjectsGrid = () => {
             })}>
                 {t("projects")}
             </Typography>
-            <Grid2 container spacing={3} sx={{height: "fit-content"}}>
+            <Grid2 container spacing={3}>
                 {projects.map(project => (
                     <React.Fragment key={project.id}>
                         <ProjectItem project={project} />

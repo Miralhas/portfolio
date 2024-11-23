@@ -33,7 +33,7 @@ const ProjectItem = ({ project }: ProjectProps) => {
     const renderedIcons = useSimpleIcons(project.technologySlugs);
 
     return (
-        <Grid2 size={{ xs: 12, md: 6 }}>
+        <Grid2 size={{ xs: 12, md: 6, xxl: 4 }}>
             <StyledPaper elevation={0} variant="elevation">
                 <Card>
                     <CardMedia component="img" image={project.imageSrc} height={250} />
