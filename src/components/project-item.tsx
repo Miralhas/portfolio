@@ -30,7 +30,7 @@ const tooltipText = (text: string) => {
 
 const ProjectItem = ({ project }: ProjectProps) => {
     const { t } = useTranslation();
-    const renderedIcons = useSimpleIcons(project.technologySlugs);
+    const renderedIcons = useSimpleIcons(project.technologySlugs, 30);
 
     return (
         <Grid2 size={{ xs: 12, md: 6, xxl: 4 }}>
