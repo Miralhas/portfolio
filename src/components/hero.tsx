@@ -5,6 +5,7 @@ import Socials from "./socials";
 
 const Hero = () => {
     const { t } = useTranslation();
+    console.log(import.meta.env.BASE_URL);
     return (
         <>
             <Stack direction="column" useFlexGap spacing={2}  sx={{
@@ -63,7 +64,7 @@ const Hero = () => {
                             border: "1px solid",
                             borderColor: theme.palette.primary.dark
                         }
-                    })} LinkComponent="a" target="_blank" href={import.meta.env.BASE_URL+"assets/cv.pdf"}>{t("resume")}</Button>
+                    })} LinkComponent="a" target="_blank" href={"/assets/cv.pdf"}>{t("resume")}</Button>
                     <Socials />
                 </Stack>
             </Stack>
