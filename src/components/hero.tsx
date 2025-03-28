@@ -5,7 +5,6 @@ import Socials from "./socials";
 
 const Hero = () => {
     const { t } = useTranslation();
-    console.log(import.meta.env.BASE_URL);
     return (
         <>
             <Stack direction="column" useFlexGap spacing={2}  sx={{

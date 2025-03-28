@@ -11,7 +11,7 @@ const projects: Project[] = [
         title: "Lecturize It",
         description: "lecturizeit",
         technologySlugs: ["java", "react", "typescript", "tailwindcss", "vercel", "mysql" ],
-        imageSrc: import.meta.env.BASE_URL + "/images/projects/lecturizeit.png",
+        imageSrc: "/images/projects/lecturizeit.png",
         githubHref: "https://github.com/lecturizeit",
     },
     {
@@ -19,7 +19,7 @@ const projects: Project[] = [
         title: "E-commerce UOL",
         description: "ecommerce",
         technologySlugs: ["java", "mysql", "springboot", "swagger", "jsonwebtokens"],
-        imageSrc: import.meta.env.BASE_URL + "/images/projects/e-commerce-uol.png",
+        imageSrc: "/images/projects/e-commerce-uol.png",
         githubHref: "https://github.com/Miralhas/e-commerce-uol",
     },
     {
@@ -27,7 +27,7 @@ const projects: Project[] = [
         title: "Art Gallery",
         description: "artGallery",
         technologySlugs: ["python", "django", "sqlite", "javascript", "html5", "css3"],
-        imageSrc: import.meta.env.BASE_URL + "/images/projects/art-gallery.png",
+        imageSrc: "/images/projects/art-gallery.png",
         githubHref: "https://github.com/Miralhas/art-gallery",
     },
     {
@@ -35,7 +35,7 @@ const projects: Project[] = [
         title: "Portfolio",
         description: "portfolio",
         technologySlugs: ["react", "typescript", "githubpages", "mui", "html5"],
-        imageSrc: import.meta.env.BASE_URL + "/images/projects/portfolio.png",
+        imageSrc: "/images/projects/portfolio.png",
         githubHref: "https://github.com/Miralhas/portfolio",
     },
 ] as const;
