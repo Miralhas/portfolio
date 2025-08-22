@@ -5,4 +5,5 @@ export type Project = {
     technologySlugs: string[];
     imageSrc: string;
     githubHref: string;
+    webisteLink?: string;
 }

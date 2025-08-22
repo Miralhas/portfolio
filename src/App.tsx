@@ -12,7 +12,6 @@ import { theme } from './lib/theme';
 
 
 const StyledBackgroundBox = styled(Box)(({ theme }) => {
-  console.log(theme)
   return {
     minHeight: "100vh",
     width: "100%",

@@ -1,4 +1,4 @@
-import { GitHub } from "@mui/icons-material";
+import { GitHub, Web } from "@mui/icons-material";
 import { Box, Button, Card, CardContent, CardMedia, Grid2, Paper, Stack, styled, Tooltip, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useSimpleIcons } from "../hooks/useSimpleIcons";
@@ -71,6 +71,7 @@ const ProjectItem = ({ project }: ProjectProps) => {
                             sx={{
                                 alignItems: "flex-start",
                                 marginTop: "1.5em",
+                                marginRight: "1em",
                                 transition: "all 450ms",
                                 "&:hover": {
                                     transform: "scale(1.05)",
@@ -79,6 +80,26 @@ const ProjectItem = ({ project }: ProjectProps) => {
                             }}>
                             Github
                         </Button>
+                        {project.webisteLink ? (
+                            <Button
+                                variant="text"
+                                color="inherit"
+                                startIcon={<Web />}
+                                LinkComponent="a"
+                                href={project.webisteLink}
+                                target="_blank"
+                                sx={{
+                                    alignItems: "flex-start",
+                                    marginTop: "1.5em",
+                                    transition: "all 450ms",
+                                    "&:hover": {
+                                        transform: "scale(1.05)",
+                                        px: "1em"
+                                    }
+                                }}>
+                                Website
+                            </Button>
+                        ) : null}
                     </CardContent>
                 </Card>
             </StyledPaper>
