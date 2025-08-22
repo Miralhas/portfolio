@@ -11,7 +11,7 @@ const projects: Project[] = [
         title: "Devilsect",
         description: "devilsect",
         technologySlugs: ["react", "nextdotjs", "tailwindcss", "zod", "reactquery"],
-        imageSrc: "https://github-production-user-asset-6210df.s3.amazonaws.com/89564433/481030332-d4ed687d-3dcd-420a-a15c-82429f0e081a.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250822%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250822T151747Z&X-Amz-Expires=300&X-Amz-Signature=8d53bbcf1c5da22769917daaae704bc977af841bf36a3e5b67e57ad94d247117&X-Amz-SignedHeaders=host",
+        imageSrc: "https://cdn.discordapp.com/attachments/915511876245405696/1408487266975748168/2025-08-22_11-45-14-ezgif.com-video-to-gif-converter1.gif?ex=68a9eb7c&is=68a899fc&hm=0804f96e583a6b4e8e7ddf36a91b5aff40b6dcd0bcfc1c39089307a14a39dcc4",
         githubHref: "https://github.com/Miralhas/devilsect",
         webisteLink: "https://devilsect.vercel.app",
     },
